@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function flipCard() {
 		const cardId = this.getAttribute('data-id');
 
-		if ((cardsChosen.length === 2) || cardsChosenId.includes(cardId)) {
+		if ((cardsChosen.length === 2) || cardsChosenId.includes(cardId) || cardsWon.find((arr) => arr.includes(cardArray[cardId].name))) {
 			return;
 		}
 
