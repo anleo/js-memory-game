@@ -131,11 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// flipCard
 	function flipCard() {
-		if (cardsChosen.length === 2) {
+		const cardId = this.getAttribute('data-id');
+
+		if ((cardsChosen.length === 2) || cardsChosenId.includes(cardId)) {
 			return;
 		}
 
-		const cardId = this.getAttribute('data-id');
 		cardsChosen.push(cardArray[cardId].name);
 		cardsChosenId.push(cardId);
 		this.setAttribute('src', cardArray[cardId].img);
